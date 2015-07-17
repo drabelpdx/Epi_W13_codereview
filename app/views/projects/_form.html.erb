@@ -1,0 +1,19 @@
+<%= render "layouts/errors", :object => @project%>
+
+<%= form_for [@category, @project] do |f| %>
+  <div class="field">
+    <%= f.text_field :name %><br>
+    <%= f.label :name, 'Project Name' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :description %><br>
+    <%= f.label :description, 'Description of Project' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :link %><br>
+    <%= f.label :link, 'Link to GitHub' %>
+  </div><br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

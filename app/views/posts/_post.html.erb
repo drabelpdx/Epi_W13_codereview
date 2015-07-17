@@ -1,0 +1,5 @@
+<%= form_for @post, remote: true do |f| %>
+  <div class="field">
+    <%= link_to post.title, post_path(post.id) %>
+  </div>
+<% end %>

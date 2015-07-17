@@ -1,0 +1,7 @@
+<%= form_for [@post, @comment], remote: true do |f| %>
+  <div class="field">
+    <%= comment.comment %>-- <small><%= comment.user.email %></small>
+    <%= link_to "(remove)", [@post, comment], method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+
+  </div>
+<% end %>

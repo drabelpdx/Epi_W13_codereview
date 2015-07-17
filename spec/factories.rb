@@ -12,15 +12,14 @@ FactoryGirl.define do
   end
 
   factory :category do
-    name 'My category'
+    name 'Rails'
     description 'My description'
 
   end
 
-  factory :project do
-    name 'pizza'
-    description 'Describe it'
-    link 'Git'
+  factory :post do
+    title 'I love Rails'
+    body 'This is one of my favorite frameworks'
 
   end
 

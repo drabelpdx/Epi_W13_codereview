@@ -7,7 +7,7 @@ describe "delete category" do
     category = FactoryGirl.create(:category)
     visit '/'
     click_on 'Add a Category'
-    click_link('My category', match: :first)
+    click_link('Rails', match: :first)
     click_on 'Delete'
     expect(page).to have_content 'Category'
   end

@@ -1,5 +1,4 @@
 <% content_for(:title, "Blog | Post") %>
-
 <div class="row">
   <div class="col-md-5 blog" id="blog">
     <h3>Code Blog</h3>
@@ -9,7 +8,7 @@
     <div>
       <h3>Posts</h3>
         <% if current_admin %>
-          <%= link_to 'Add a Post', new_post_path, id: 'new_post_link', remote: true, :class => "btn btn-success" %>
+          <%= link_to 'Add a Post', new_post_path, id: 'new_post_link', :class => "btn btn-success" %>
           <br>
         <% end %>
       </div>

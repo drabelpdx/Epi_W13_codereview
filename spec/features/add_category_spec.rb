@@ -7,7 +7,7 @@ describe "add category" do
     category = FactoryGirl.create(:category)
     visit '/'
     click_on 'Add a Category'
-    expect(page).to have_content 'My'
+    expect(page).to have_content 'Rails'
   end
 
   it "gives error when no name is entered" do

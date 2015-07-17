@@ -7,13 +7,13 @@ describe "add post" do
     visit '/'
     click_link('Blog', match: :first)
     click_on 'Add a Post'
-    fill_in 'Title', :with => 'My post'
+    fill_in 'Title', :with => 'I love Rails'
     fill_in 'Body', :with => 'a post'
     click_on 'Create Post'
-    expect(page).to have_content 'My post'
+    expect(page).to have_content 'I love Rails'
   end
 
-  it "gives error when no name is entered" do
+  it "gives error when no name is title" do
     admin = FactoryGirl.create(:admin)
     login_as(admin, :scope => :admin)
     visit '/'

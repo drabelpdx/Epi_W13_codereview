@@ -5,7 +5,7 @@
   </h2>
 </div>
 <div class="row">
-  <div class="col-md-5 category" id="category">
+  <div class="col-md-5 left" id="category">
     <% if current_admin %>
       <%= link_to 'Edit category', edit_category_path, :class => "btn btn-success" %>  |
       <%= link_to 'Delete', category_path(@category), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
@@ -15,7 +15,7 @@
     <p><%=@category.description%></p>
     <br>
   </div>
-  <div class="col-md-5 projects" id="projects">
+  <div class="col-md-5 right" id="projects">
     <% if current_admin %>
       <%= link_to 'Add a Project', new_category_project_path(@category.id), :class => "btn btn-primary" %>
       <br><br>

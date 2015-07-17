@@ -6,7 +6,7 @@ David Abel
 
 ### Description ###
 
-Portfolio is a class project to create a profile of projects that demonstrates the skills I have learned at Epicodus.
+This is the latest incarnation of the multi-week project to create a profile of projects that demonstrates the skills I have learned at Epicodus.
 
 ### Heroku Link ###
 
@@ -20,9 +20,9 @@ to load
 
     $cd Desktop/{file_name}
     $postgres
-
     $rake db:create
     $rake db:migrate
+    $rake db:seed
     $rake db:test:prepare
     $rails s
 
@@ -31,12 +31,14 @@ Go to "www.localhost/3000"
 ### Sign Up/Sign in ###
 
 As User:
-Create an account and sign in.
+Create a user account and sign in.
 
 As Admin:
 Click Admin and sign in with the Admin account:
     email: test@test.com
     password: testtest
+
+Be sure the check out the Admin console (rails_admin gem) while here.
 
 ### Debugging ###
 

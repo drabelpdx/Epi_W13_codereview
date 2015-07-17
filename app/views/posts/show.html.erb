@@ -1,20 +1,26 @@
 <% content_for(:title, "Post | Comment") %>
 
-<% if current_admin %>
-  <%= link_to 'Edit post', edit_post_path, :class => "btn btn-success" %>  |
-  <%= link_to 'Delete', post_path(@post), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
-  <hr>
-<% end %>
+<div class="row">
+  <div class="col-md-5 left" id="about">
+    <% if current_admin %>
+      <%= link_to 'Edit post', edit_post_path, :class => "btn btn-success" %>  |
+      <%= link_to 'Delete', post_path(@post), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
+      <hr>
+    <% end %>
 
-<h3><%=@post.title %></h3>
-<h4><%=@post.body%></h4>
-<br>
-<hr>
-<% if current_user %>
-  <%= link_to 'Add a Comment', new_post_comment_path(@post.id), id: "new_comment_link", remote: true, :class => "btn btn-primary" %>
-  <br><br>
-<% end %>
-<h3>Comments</h3>
-<div class="comments" id="comments">
-<%= render @post.comments %>
+    <h3><%=@post.title %></h3>
+    <h4><%=@post.body%></h4>
+    <br>
+
+    <% if current_user %>
+      <%= link_to 'Add a Comment', new_post_comment_path(@post.id), id: "new_comment_link", remote: true, :class => "btn btn-primary" %>
+      <br><br>
+    <% end %>
+    </div>
+    <div class="col-md-5 right" id="about">
+    <h3>Comments</h3>
+    <div class="comments" id="comments">
+      <%= render @post.comments %>
+    </div>
+  </div>
 </div>

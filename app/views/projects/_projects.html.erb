@@ -1,0 +1,27 @@
+<% @category.projects.each do |project| %>
+
+  <div class="row">
+    <div class="col-md-5 left">
+
+      <h3 class="text-center">
+        <%= project.name %>
+        <% if current_admin %>
+          |  <%= link_to 'Edit project', edit_category_project_path(project.category, project), :class => "btn btn-success" %>
+          |  <%= link_to 'Delete', category_project_path(project.category, project), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
+        <% end %>
+      </h3>
+
+      <br>
+      <h4>Description:</h4>
+        <p><%= project.description%></p>
+        <br>
+        <%= link_to 'See it on GitHub', project.link, :target => 'blank' %>
+    </div>
+    <div class="col-md-5 right text-center project_image">
+      <%= link_to project.url, :target => "_blank" do %>
+        <%= image_tag(project.image) %>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+<% end %>

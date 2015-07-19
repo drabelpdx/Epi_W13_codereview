@@ -1,25 +1,27 @@
 <% content_for(:title, "Blog | Post") %>
 
-<div class="row">
-  <h2 class="page-header text-center">
-    Blog
-  </h2>
-</div>
-<div class="row">
-  <div class="col-md-5 left" id="blog">
-    <h3>Code Blog</h3>
-    <p>You can read my thoughts on coding and the projects I've been working on. </p>
+<div class="container">
+  <div class="row">
+    <h2 class="page-header text-center">
+      Blog
+    </h2>
   </div>
-  <div class="col-md-5 right" id="posts">
-    <div>
-      <h3>Posts</h3>
-        <% if current_admin %>
-          <%= link_to 'Add a Post', new_post_path, id: 'new_post_link', :class => "btn btn-success" %>
-          <br>
-        <% end %>
+  <div class="row">
+    <div class="col-md-5 left" id="blog">
+      <h3>Code Blog</h3>
+      <p>You can read my thoughts on coding and the projects I've been working on. </p>
+    </div>
+    <div class="col-md-5 right" id="posts">
+      <div>
+        <h3>Posts
+          <% if current_admin %>
+            |  <%= link_to 'Add a Post', new_post_path, id: 'new_post_link', :class => "btn btn-primary" %>
+          <% end %>
+          </h3>
+        </div>
+      <div class="post" id="post">
+        <%= render @posts %>
       </div>
-    <div class="post" id="post">
-      <%= render @posts %>
     </div>
   </div>
 </div>

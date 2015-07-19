@@ -1,19 +1,29 @@
 <%= render "layouts/errors", :object => @project%>
 
-<%= form_for [@category, @project] do |f| %>
-  <div class="field">
-    <%= f.text_field :name %><br>
-    <%= f.label :name, 'Project Name' %>
-  </div>
-  <div class="field">
-    <%= f.text_field :description %><br>
-    <%= f.label :description, 'Description of Project' %>
-  </div>
-  <div class="field">
-    <%= f.text_field :link %><br>
-    <%= f.label :link, 'Link to GitHub' %>
-  </div><br>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="form-container">
+  <%= form_for [@category, @project] do |f| %>
+    <div class="field">
+      <%= f.text_field :name %><br>
+      <%= f.label :name, 'Project Name' %>
+    </div>
+    <div class="field">
+      <%= f.text_field :description %><br>
+      <%= f.label :description, 'Description of Project' %>
+    </div>
+    <div class="field">
+      <%= f.text_field :link %><br>
+      <%= f.label :link, 'Link to GitHub' %>
+    </div>
+    <div class="field">
+      <%= f.text_field :url %><br>
+      <%= f.label :link, 'Link to url' %>
+    </div>
+    <div class="field">
+      <%= f.text_field :image %><br>
+      <%= f.label :link, 'Link to image' %>
+    </div><br>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

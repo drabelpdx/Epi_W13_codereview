@@ -1,29 +1,31 @@
 <% content_for(:title, @category.name + " | Projects") %>
-<div class="row">
-  <h2 class="page-header text-center">
-    <%=@category.name %>
-  </h2>
-</div>
-<div class="row">
-  <div class="col-md-5 left" id="category">
-    <% if current_admin %>
-      <%= link_to 'Edit category', edit_category_path, :class => "btn btn-success" %>  |
-      <%= link_to 'Delete', category_path(@category), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
-    <hr>
-    <% end %>
-    <h4>Experience:</h4>
-    <p><%=@category.description%></p>
-    <br>
-  </div>
-  <div class="col-md-5 right" id="projects">
-    <% if current_admin %>
-      <%= link_to 'Add a Project', new_category_project_path(@category.id), :class => "btn btn-primary" %>
-      <br><br>
-    <% end %>
+<div class="container">
 
-    <h4>Projects in <%=@category.name %>:</h4>
-    <% @category.projects.each do |project| %>
-      <li><%= link_to project.name, category_project_path(@category, project) %></li>
-    <%end%>
+  <div class="row">
+    <h2 class="page-header text-center">
+      <%=@category.name %>
+      <% if current_admin %>
+        |  <%= link_to 'Edit category', edit_category_path, :class => "btn btn-success" %>  |
+        <%= link_to 'Delete', category_path(@category), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
+      <% end %>
+    </h2>
+  </div>
+  <div class="row left">
+    <p><%=@category.description%></p>
+  </div>
+</div>
+<div class="row spacer">
+
+</div>
+<div class="container">
+  <div class="row left">
+    <h3 class="page-header text-center">Projects
+      <% if current_admin %>
+        |  <%= link_to 'Add a Project', new_category_project_path(@category.id), :class => "btn btn-primary" %>
+      <% end %>
+    </h3>
+  </div>
+  <div class="row">
+    <%= render "projects/projects", project: @project %>
   </div>
 </div>
